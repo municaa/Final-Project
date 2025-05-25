@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome Grooming Services - Testimonials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&auto=format&crop=entropy');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            
+        }
+
+     
+        nav a.active {
+            color: #FF69B4;
+            background: rgba(255, 105, 180, 0.15);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1516734212186-65266f08a870') center/cover;
+        }
+
+        .header h1 {
+            color: #FF69B4;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FF69B4, transparent);
+            margin: 20px auto;
+        }
+
+        /* Testimonials Section */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .testimonials-list {
+            margin-top: 3rem;
+        }
+
+        .testimonial-item {
+            margin-bottom: 2.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .testimonial-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .rating {
+            color: #FF69B4;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .testimonial-text {
+            color: white;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .client-info {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: right;
+        }
+
+        .client-info h3 {
+            color: #FF69B4;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-info p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        .testimonial-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .rating {
+            color: #FF69B4;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .testimonial-text {
+            color: white;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .client-info {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: right;
+        }
+
+        .client-info h3 {
+            color: #FF69B4;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-info p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .client-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #FF69B4;
+        }
+
+        .client-info h3 {
+            color: #FF69B4;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .client-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: #FF69B4;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: white;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-date {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--this section is for the navigation bar-->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="testimonials.html" class="active">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News & Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="designer.html">Designer</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Client Testimonials</h1>
+        <div class="separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="testimonials-list">
+            <div class="testimonial-item">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">
+                    "I've been bringing my dog Max to Pawsome Grooming for years. The staff is always so friendly and professional. They really take the time to understand our needs and make sure Max is comfortable during his grooming sessions. Highly recommend!"
+                </div>
+                <div class="client-info">
+                    <h3>Maria S.</h3>
+                    <p>Dog Owner</p>
+                    <p class="testimonial-date">March 15, 2025</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">
+                    "Best grooming service in town! My cat Luna loves coming here. The staff is incredibly gentle and patient with her. The salon is always clean and well-maintained. Thank you for making Luna look and feel her best!"
+                </div>
+                <div class="client-info">
+                    <h3>John T.</h3>
+                    <p>Cat Owner</p>
+                    <p class="testimonial-date">February 3, 2025</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">
+                    "I can't say enough good things about Pawsome Grooming. They've been a lifesaver for my rescue dog who was anxious about grooming. Their patience and expertise have made a huge difference. My dog looks amazing!"
+                </div>
+                <div class="client-info">
+                    <h3>Karen L.</h3>
+                    <p>Pet Parent</p>
+                    <p class="testimonial-date">May 1, 2024</p>
+                </div>
+            </div>
+
+            <div class="testimonial-item">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="testimonial-text">
+                    "Pawsome Grooming did an amazing job with my dog, Max! He came home smelling great and looking so clean. The staff was super friendly too!"
+                </div>
+                <div class="client-info">
+                    <h3>Morgan M.</h3>
+                    <p>Dog Owner</p>
+                    <p class="testimonial-date">JANUARY 3, 2025</p>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">
+                        "My cat, Luna, usually hates baths, but the groomers here were so gentle and patient. I'm really happy with their service!"
+                    </div>
+                    <div class="client-info">
+                        <h3>Kalix J.</h3>
+                        <p>Cat Owner</p>
+                        <p class="testimonial-date">April 3, 2025</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">
+                        "I've tried a few grooming places, but this one is the best! My golden retriever looks like a show dog every time!"
+                    </div>
+                    <div class="client-info">
+                        <h3>Jeydon L.</h3>
+                        <p>Dog Owner</p>
+                        <p class="testimonial-date">MARCH 3, 2025</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">
+                        "Very clean place and professional groomers. They handled my Persian cat so well—no stress at all!"
+                    </div>
+                    <div class="client-info">
+                        <h3>Shelby M.</h3>
+                        <p>Cat Owner</p>
+                        <p class="testimonial-date">May 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pawsome Grooming Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
